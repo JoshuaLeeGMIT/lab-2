@@ -18,7 +18,7 @@ class Tasks implements taskList {
     deleteTask(task): number {
         let i: number;
 
-        if ((i = tasks.indexOf(task)) != -1) {
+        if ((i = this.tasks.indexOf(task)) != -1) {
             this.tasks.splice(i, 1);
             console.log(task + " has been removed from the array.");
         }
