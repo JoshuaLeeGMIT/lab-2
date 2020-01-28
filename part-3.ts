@@ -1,26 +1,28 @@
-class test implements task {
-    let tasks:Array<string> = [];
+import {taskList} from './taskList';
 
-    function addTask(task:string): number {
+class Tasks implements taskList {
+    tasks: Array<string> = [];
+
+    addTask(task: string) {
         console.log(task + " has been added to the array.");
 
-        return tasks.push(task);
+        return this.tasks.push(task);
     }
 
-    function listAllTasks(): void {
-        tasks.forEach(task => {
+    listAllTasks(): void {
+        this.tasks.forEach(task => {
             console.log(task);
         });
     }
 
-    function deleteTask(task: string): number {
+    deleteTask(task): number {
         let i: number;
 
         if ((i = tasks.indexOf(task)) != -1) {
-            tasks.splice(i, 1);
+            this.tasks.splice(i, 1);
             console.log(task + " has been removed from the array.");
         }
 
-        return tasks.length;
+        return this.tasks.length;
     }
 }
